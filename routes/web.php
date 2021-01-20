@@ -65,3 +65,15 @@ Route::get('/projeto_desenvolvedores', function () {
 
   // return $projetos->toJson();
 });
+
+
+Route::get('/alocar', function () {
+    $proj = Projeto::find(3);
+    if (isset($proj)) {
+        //$proj->desenvolvedores()->attach(1, ['horas_semanais' => 50] );
+        $proj->desenvolvedores()->attach([
+            2 => ['horas_semanais' => 20],
+            3 => ['horas_semanais' => 30],
+        ]);
+    }
+});
