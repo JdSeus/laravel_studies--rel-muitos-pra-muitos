@@ -29,6 +29,7 @@ Route::get('/desenvolvedor_projeto', function () {
                 echo "<li>";
                 echo "Nome: " . $p->nome . " | ";
                 echo "Estimativa de horas: " . $p->estimativa_horas . " | ";
+                echo "Horas trabalhadas: " . $p->pivot->horas_semanais . " | ";
                 echo "</li>";
             }
             echo "</ul>";
@@ -36,4 +37,6 @@ Route::get('/desenvolvedor_projeto', function () {
         }
         echo "<br>";
     }
+
+    //return $desenvolvedores->toJson();
 });
