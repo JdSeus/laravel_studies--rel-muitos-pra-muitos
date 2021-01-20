@@ -9,4 +9,8 @@ class Projeto extends Model
 {
     use HasFactory;
     protected $table = 'projetos';
+
+    function desenvolvedores() {
+        return $this->belongsToMany('App\Models\Desenvolvedor', 'alocacoes')->withPivot('horas_semanais');
+    }
 }
